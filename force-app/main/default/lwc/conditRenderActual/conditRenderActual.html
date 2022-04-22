@@ -1,0 +1,29 @@
+<template>
+    <lightning-card  title="Conditional Rendering">
+        <div class="slds-m-around_medium">
+            <lightning-button 
+                variant="brand-outline" 
+                label="Show Data" 
+                title="Show Data" 
+                onclick={handleClick} 
+                class="slds-m-left_x-small">
+            </lightning-button>
+            <template if:true={inVisible}>
+                <div class="slds-m-top_medium">Muk@2002</div>
+            </template>
+            <template if:false={inVisible}>
+                <div class="slds-m-top_medium">You Can't see the Data. please click on the button</div>
+            </template> 
+
+            <lightning-input 
+                type="text"
+                label="Enter text"
+                title="Enter text*"
+                onkeyup={changeHandler}>
+            </lightning-input>
+            <template if:true={name}>
+                <div class="slds-m-top_small">Muk@2002</div>
+            </template>
+        </div>
+    </lightning-card>
+</template>
