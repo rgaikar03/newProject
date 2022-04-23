@@ -1,0 +1,20 @@
+/* 
+elements - h1, div, p, span
+class    - .ext (ext == class Name)
+pusedo   - .ext:hover
+*/
+p {
+    color: rgb(104, 104, 211);  
+    font-size: 20px;
+    border: 1px solid black;
+}
+
+.ext {
+    color: brown;
+    font-size: 25px;
+}
+
+.ext:hover{
+    font-size: 50px;
+    color: red;
+}
