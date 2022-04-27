@@ -1,0 +1,46 @@
+<!-- 
+    Hooks - 
+    1.Mounting phase -
+        1.constructor - flow -> parent to child
+            -gets called component is created
+            -have to call super() first
+        2.connectedCallback - flow -> parent to child
+            -it gets called when component inserted in DOM
+        3.renderedCallBack - flow -> child to parent
+           -it gets called when component rendering is done
+           -this can be called multiple times
+    2.Unmounting Phase -
+        1.disconnectedCallback - flow -> parent to child
+            -gets called when component is removed from DOM
+    3.Error Phase -
+        1.errorCallback- 
+            - gets called if there is error in componented while rendering
+
+-->
+<template>
+    <lightning-card title="Life Cycle Hooks">
+        <div class="slds-var-maround_medium">
+            <template if:true={isChildComVis}>
+                <lightning-button 
+                variant="brand" 
+                label="Hide Child" 
+                title="Hide Child" 
+                onclick={handleClick} 
+                class="slds-m-left_x-small">
+            </lightning-button>
+            </template>
+            <template if:false={isChildComVis}> 
+                <lightning-button 
+                variant="brand" 
+                label="Show Child" 
+                title="Show Child" 
+                onclick={handleClick} 
+                class="slds-m-left_x-small">
+            </lightning-button>
+            </template>   
+        </div>
+        <template if:true={isChildComVis}> 
+            <c-life-cycle-child></c-life-cycle-child>
+        </template> 
+    </lightning-card>
+</template>
